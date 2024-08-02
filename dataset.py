@@ -57,7 +57,7 @@ def load(data_zip: str, data_set: str, lang: str, subtask: int = 1):
     if os.path.isfile(path):
         print("loading data from pickle "+ path)
         with open(path, 'rb') as f:
-            return pickle.load(f)
+            return pickle.load(f, encoding="utf-8")
     else:
         print("loading from zip")
         data  = load_from_zip(data_zip, data_set, lang, subtask)
